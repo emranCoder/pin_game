@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+	<title>Pin Game</title>
+</head>
+<body>
+<div class="blooast ">
+	<img  class="bloost d-none">
+	<img  class="accepted d-none">
+</div>
+<section class="pin_section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-xl-6 col-lg-6">
+				<div class="pin_btn">
+					<button type="button" class="btn round-btn ">Go</button>
+				</div>
+			  <input type="text" class="form-control pn_num" aria-label="Large" aria-describedby="inputGroup-sizing-sm" readonly="" value="0">
+			 	<div class="test d-none"></div>
+			</div>
+			<div class="col-md-6  col-xl-6 col-lg-6 d-flex justify-content-cente">
+				<div class="num-pad ">
+					<span class="num-key" onclick="numTap('1')">1</span>
+					<span class="num-key" onclick="numTap('2')">2</span>
+					<span class="num-key" onclick="numTap('3')">3</span><br>
+					<span class="num-key" onclick="numTap('4')">4</span>
+					<span class="num-key" onclick="numTap('5')">5</span>
+					<span class="num-key" onclick="numTap('6')">6</span><br>
+					<span class="num-key" onclick="numTap('7')">7</span>
+					<span class="num-key" onclick="numTap('8')">8</span>
+					<span class="num-key" onclick="numTap('9')">9</span><br>
+					<span class="num-key" ><i class="bi bi-backspace-fill"></i></span>
+					<span class="num-key" onclick="numTap(0)">0</span>
+					<span class="num-key" ><i class="bi bi-arrow-return-left"></i></span>
+					<br>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div>COPYRIGHT BY © MD.Emran Alam</div>
+</section>
+
+
+
+
+<script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="js/pin_game.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(()=>{
+		//animation add
+		$(".pin_btn button").click(()=>{
+			$(".pin_btn").addClass("pin-animation");
+			setTimeout(()=>{
+			$(".pin_btn").addClass("d-none");
+			$(".pn_num").addClass("pn_num-animation");
+			pinGenarate();
+		},1000);
+		});
+		
+		//pin genarate
+		function pinGenarate() {
+			const num = Math.floor(Math.random()*10000000000000000+1);
+			$(".pn_num").val(num);
+		}
+
+
+	});
+
+
+</script>
+</body>
+</html>
