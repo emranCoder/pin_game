@@ -49,7 +49,7 @@ function numTap(num)
         document.querySelector(".bloost").classList.remove("d-none");
         document.querySelector(".bloost").src='image/bloost1.gif';
       },1000);
-      setTimeout(windowReload,6000);
+      setTimeout(windowReload,10000);
     }
     i++;
     if(i==l)
