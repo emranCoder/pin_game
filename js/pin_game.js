@@ -19,7 +19,7 @@ function createRipple(event) {
 
   button.appendChild(circle);
 }
-
+//button target
 const buttons = document.getElementsByClassName("num-key");
 for (const button of buttons) {
 
@@ -49,7 +49,7 @@ function numTap(num)
         document.querySelector(".bloost").classList.remove("d-none");
         document.querySelector(".bloost").src='image/bloost1.gif';
       },1000);
-      setTimeout(windowReload,2999);
+      setTimeout(windowReload,3000);
     }
     i++;
     if(i==l)
